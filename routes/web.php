@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('users', [UserController::class, 'getAll']);
+Route::get('users/filter', [UserController::class, 'getUserFilteredOnFacets']);
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+

@@ -13,4 +13,22 @@ class UserController extends Controller
 
     	return $users;
     }
+
+    public function getUserFilteredOnFacets(Request $request)
+    {
+    	//Deze functie returned een lijst met userID's
+		$filteredUsersIds = User::filterOnFacets($request);
+		$users = [];
+
+		foreach($filteredUsersIds as $id)
+		{
+			$user = User::where('id', $id)
+				->first();
+
+			array_push($users, $user);
+		}
+
+		return $users;
+    }
+
 }
