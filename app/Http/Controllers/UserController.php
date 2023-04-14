@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserCollection;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -9,9 +10,11 @@ class UserController extends Controller
 {
     public function getAll()
     {
-    	$users = User::all();
 
-    	return $users;
+    	return UserCollection::collection(User::with('facetGroup')->paginate(50));
+//    	$users = User::all();
+
+//    	return $users;
     }
 
     public function getUserFilteredOnFacets(Request $request)

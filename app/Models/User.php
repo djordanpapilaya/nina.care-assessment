@@ -49,9 +49,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function facetGroup(): BelongsToMany
+    public function facetGroup()
     {
-    	return $this->belongsToMany(UserFacetGroup::class, 'users_facet_groups');
+//    	return $this->belongsToMany(Facet::class, 'user_facet_groups', 'facet_id', 'user_id');
+    	return $this->hasMany(Facet::class, 'uuid', 'facet_id');
     }
 
 

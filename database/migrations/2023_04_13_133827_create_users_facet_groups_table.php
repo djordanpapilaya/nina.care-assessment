@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users_facet_groups', function (Blueprint $table) {
+        Schema::create('user_facet_groups', function (Blueprint $table) {
             $table->id('uuid');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('facet_id');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users_facet_groups');
+        Schema::dropIfExists('user_facet_groups');
     }
 };
