@@ -27,4 +27,9 @@ class Facet extends Model
 	{
 		return $this->belongsTo(FacetGroup::class);
 	}
+
+	public function users(): BelongsToMany
+	{
+		return $this->belongsToMany(UserFacetGroup::class, 'users_facet_groups');
+	}
 }

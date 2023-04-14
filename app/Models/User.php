@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     public function facetGroup(): BelongsToMany
     {
-    	return $this->belongsToMany(FacetGroup::class, 'users_facet_groups');
+    	return $this->belongsToMany(UserFacetGroup::class, 'users_facet_groups');
     }
 
 

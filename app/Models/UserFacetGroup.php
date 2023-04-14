@@ -12,6 +12,6 @@ class UserFacetGroup extends Model
 	protected $fillable = [
 		'uuid',
 		'user_id',
-		'facet_group_id',
+		'facet_id',
 	];
 }
